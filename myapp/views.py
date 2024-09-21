@@ -95,7 +95,7 @@ class CreateVirtualMachineView(APIView):
         user = request.user
         
         # Check if the user has an admin role
-        if user.role.name != 'Standard User':
+        if user.role.name != 'Admin':
             return Response({
                 "success": False,
                 "message": "Permission denied. You don't have rights to perform this action.",
